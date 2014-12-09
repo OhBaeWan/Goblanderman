@@ -1,0 +1,31 @@
+//usage:  grid_snap(speed,snap) speed = argument0, snap = argument 1 speed must be a multiple of snap
+
+spd=argument1
+if place_snapped(spd,spd){
+    if keyboard_check(vk_left){
+    direction=180
+    speed=argument0
+    }
+    if keyboard_check(vk_right){
+    direction=0
+    speed=argument0
+    }
+    if keyboard_check(vk_up){
+    direction=90
+    speed=argument0
+    }
+    if keyboard_check(vk_down){
+    direction=270
+    speed=argument0
+    }
+}
+nokeys= // puts all key released in one variable
+    (!keyboard_check(vk_up))&&
+    (!keyboard_check(vk_down))&&
+    (!keyboard_check(vk_left))&&
+    (!keyboard_check(vk_right))
+
+if (place_snapped(spd,spd)) && (nokeys) //checks it is snapped and that no keys are pressed
+    {
+    speed=0
+    }
